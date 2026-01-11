@@ -1075,4 +1075,35 @@ page > top > top-accordion
   line-height: 1.4;
   letter-spacing: 0;
   font-weight: 400;
+}
+
+/*!
+page > top > github-link
+------------------------------
+*/
+.github-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-text {
+  animation: rotate 20s linear infinite;
+}
+
+.circular-text text {
+  font-size: 16px;
+  font-family: var(--font-family--en);
+  letter-spacing: 2px;
+  fill: var(--color-font-gray);
+  text-transform: uppercase;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */
