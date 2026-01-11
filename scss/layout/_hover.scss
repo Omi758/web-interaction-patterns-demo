@@ -1,0 +1,47 @@
+@use "../global" as g;
+
+/*!
+layout > hover
+------------------------------
+*/
+// ヘッダーopenボタン・closeボタン
+.header-menu-open-btn,
+.header-menu-close-btn {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+  &:hover {
+    background-color: var(--color-hover-black);
+    color: var(--color-font-white);
+    border-color: var(--color-border-white);
+  }
+}
+
+// ヘッダーメニューリンク
+.u-header-text-hover {
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--color-hover-yellow);
+  }
+}
+
+// ボタン
+.u-button-hover {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &:hover {
+    background-color: var(--color-hover-light-gray);
+    color: var(--color-font-base);
+  }
+}
+
+// ドロップダウンボタン
+.u-dropdown-button-hover {
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+  &:hover {
+    background-color: var(--color-hover-black);
+    border-color: var(--color-border-black);
+    &::before {
+      background-color: var(--color-hover-light-gray);
+    }
+  }
+}

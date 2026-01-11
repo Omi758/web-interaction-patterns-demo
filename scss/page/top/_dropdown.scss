@@ -1,0 +1,68 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-dropdown
+------------------------------
+*/
+.dropdown-inner {
+  position: relative;
+}
+
+.dropdown-button {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50vh;
+  border: 1px solid var(--color-border-dark-gray);
+  background-color: var(--color-bg-extra-light-gray);
+  @include g.mq() {
+    width: 100px;
+    height: 100px;
+  }
+}
+.dropdown-button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  mask-image: url("../img/top/icon-astronaut.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--color-bg-dark-gray);
+}
+
+.dropdown-nav-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border-gray);
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+  opacity: 0; // 初期設定(非表示)
+  visibility: hidden; // 初期設定(非表示)
+}
+
+.dropdown-menu-item {
+  white-space: nowrap;
+  color: var(--color-font-gray);
+  transition: color 0.3s ease;
+  &:hover {
+    color: var(--color-font-base);
+  }
+}
+
+.dropdown-menu-item:not(:last-child) {
+  border-bottom: 1px solid var(--color-border-gray);
+}
+
+.dropdown-menu-list a,
+.dropdown-menu-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 4px 48px 8px 24px;
+}

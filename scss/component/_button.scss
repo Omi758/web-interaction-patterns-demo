@@ -1,0 +1,18 @@
+@use "../global" as g;
+
+/*!
+component > button
+------------------------------
+*/
+.c-button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-dark-gray);
+  background-color: var(--color-bg-dark-gray);
+  color: var(--color-font-white);
+  font-size: 20px;
+  font-family: var(--font-family--en);
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.5;
+}

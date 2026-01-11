@@ -1,0 +1,94 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-accordion
+------------------------------
+*/
+.accordion-inner {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  @include g.mq() {
+    gap: 32px;
+  }
+}
+
+.accordion-details {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  @include g.mq() {
+    padding: 0 40px;
+  }
+}
+
+.accordion-summary {
+  padding: 16px 36px 16px 24px;
+  display: flex;
+  align-items: start;
+  position: relative;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--color-font-white);
+  background-color: var(--color-bg-gray);
+  cursor: pointer;
+}
+
+.accordion-summary::webkit-details-marker {
+  display: none;
+}
+
+.accordion-summary::before {
+  content: "Q.";
+  padding-right: 8px;
+  font-weight: 600;
+  color: var(--color-font-white);
+}
+
+.accordion-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+}
+
+.accordion-icon span {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-font-white);
+}
+
+.accordion-icon span:nth-child(1) {
+  width: 100%;
+  height: 2px;
+}
+
+.accordion-icon span:nth-child(2) {
+  width: 2px;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.accordion-details.is-open .accordion-icon span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion-contents {
+  background-color: var(--color-bg-white);
+  overflow: hidden; // animation中にoverflow:hiddenを設定
+}
+
+.accordion-contents-inner {
+  padding: 16px 36px 16px 24px;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  font-weight: 400;
+}

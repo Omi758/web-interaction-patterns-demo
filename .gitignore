@@ -1,0 +1,21 @@
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# エディタ設定
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# CSSコンパイル生成ファイル（ソースマップ）
+*.css.map
+
+# Node.js関連（将来使用する場合）
+node_modules/
+package-lock.json
+
+# ログファイル
+*.log
+npm-debug.log*

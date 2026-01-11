@@ -1,0 +1,90 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-kv
+------------------------------
+*/
+.top-kv {
+  height: 100vh;
+  background-color: var(--color-bg-black);
+  color: var(--color-font-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.top-kv-inner {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 56px;
+  @include g.mq() {
+    margin-bottom: 120px;
+  }
+}
+
+.top-kv-copy-title {
+  font-size: 56px;
+  font-family: var(--font-family--en);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+
+  @include g.mq(sm) {
+    font-size: 70px;
+  }
+  @include g.mq() {
+    font-size: 88px;
+    line-height: 1.2;
+  }
+  @include g.mq(lg) {
+    font-size: 110px;
+    line-height: 1.2;
+  }
+}
+
+.top-kv-copy-title span {
+  display: block;
+
+  @include g.mq() {
+    display: inline;
+  }
+
+  &:last-child {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  &:last-child::after {
+    content: "";
+    display: block;
+    background-image: url("../img/common/icon-js.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    @include g.mq() {
+      width: 56px;
+      height: 56px;
+    }
+  }
+}
+
+.top-kv-copy-text {
+  font-family: var(--font-family--en);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  @include g.mq() {
+    font-size: 20px;
+  }
+}
+
+.top-kv-text {
+  font-weight: 400;
+  line-height: 1;
+  @include g.mq() {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Web Interaction Patterns</title>
+    <meta
+      name="description"
+      content="Web制作で頻出するインタラクションの実装を、理解と検証を目的としてまとめたデモサイトです。"
+    />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon/webclipicon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+    <!-- ogp -->
+    <meta property="og:site_name" content="Web Interaction Patterns" />
+    <meta property="og:url" content="URL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Web Interaction Patterns" />
+    <meta
+      property="og:description"
+      content="Web制作で頻出するインタラクションの実装を、理解と検証を目的としてまとめたデモサイトです。"
+    />
+    <meta property="og:image" content="URL" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:description"
+      content="Web制作で頻出するインタラクションの実装を、理解と検証を目的としてまとめたデモサイトです。"
+    />
+    <meta name="twitter:image:src" content="URL" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- noindex_実案件では削除のこと！！ -->
+    <meta name="robots" content="noindex" />
+
+    <!-- js -->
+    <script src="js/vendor/gsap.min.js" defer></script>
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header-logo">
+        <a href="/" class="header-logo-link">
+          <img
+            src="img/common/logo.svg"
+            width="1032"
+            height="197"
+            alt="Web Interaction Patterns"
+            decoding="async"
+            loading="lazy"
+          />
+        </a>
+      </h1>
+      <dialog
+        class="header-menu js-header-menu"
+        aria-label="グローバルメニュー"
+      >
+        <button
+          class="header-menu-close-btn js-header-menu-close-btn"
+          aria-label="メニューを閉じる"
+        >
+          close
+        </button>
+        <nav class="header-menu-nav" aria-label="タブメニュー">
+          <ul class="header-menu-list">
+            <li class="header-menu-item">
+              <a
+                href="#modal"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Modal
+                <span>モーダル</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a
+                href="#dropdown"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Dropdown Menu
+                <span>ドロップダウンメニュー</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a
+                href="#tab"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Tab Menu
+                <span>タブメニュー</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a
+                href="#accordion"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Accordion
+                <span>アコーディオン</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a
+                href="#hamburger-menu"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Hamburger Menu
+                <span>ハンバーガーメニュー</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a
+                href="#reveal-header"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Reveal Header
+                <span>スクロール連動ヘッダー表示</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a
+                href="#sticky-cta"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Sticky CTA Button
+                <span>固定CTAボタン</span>
+              </a>
+            </li>
+
+            <li class="header-menu-item">
+              <a
+                href="#auto-slider"
+                class="header-menu-link u-header-text-hover"
+                lang="en"
+                >Auto Slider
+                <span>自動スライダー</span>
+              </a>
+            </li>
+            <li class="header-menu-item">
+              <a href="#" class="header-menu-link u-header-text-hover" lang="en"
+                >GitHub
+                <span>サンプルコード</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </dialog>
+      <button
+        class="header-menu-open-btn js-header-menu-open-btn"
+        aria-label="メニューを開く"
+      >
+        menu
+      </button>
+    </header>
+    <main>
+      <!-- top-kv -->
+      <section class="top-kv js-top-kv">
+        <div class="top-kv-inner l-container-l">
+          <div class="top-kv-copy-container">
+            <h2 class="top-kv-copy-title" lang="en">
+              <span>Web</span> <span>Interaction</span> <span>Patterns</span>
+            </h2>
+            <p class="top-kv-copy-text" lang="en">
+              <span
+                >A collection of common web interaction patterns implemented in
+                JavaScript.</span
+              >
+            </p>
+          </div>
+          <p class="top-kv-text top-kv-text-ja">
+            Web制作でよく使われる動きを理解と検証を目的にまとめています。
+          </p>
+        </div>
+      </section>
+      <!-- top-kv end -->
+      <!-- card section -->
+      <div class="cards-container l-container">
+        <!-- modal -->
+        <article id="modal" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <button
+              type="button"
+              class="c-button u-button-hover js-modal-open-btn"
+              lang="en"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+            >
+              modal open
+            </button>
+
+            <div class="modal-overlay js-modal-overlay"></div>
+
+            <dialog class="modal js-modal" aria-label="モーダル">
+              <div class="modal-contents-inner">
+                <div class="modal-contents js-modal-contents">
+                  <button
+                    type="button"
+                    class="modal-close-btn js-modal-close-btn"
+                  >
+                    <span class="u-visually-hidden">閉じる</span>
+                  </button>
+                  <p class="modal-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque id malesuada risus. In hac habitasse platea
+                    dictumst. Donec tempor malesuada velit, eu imperdiet risus
+                    lobortis eu. Nullam ac eros ligula. Fusce eu rhoncus est.
+                  </p>
+                </div>
+              </div>
+            </dialog>
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Modal</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                ボタンをクリックするとモーダルが表示されます。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  閉じるボタン、Escapeキー、背景クリックで閉じることができます。
+                </li>
+                <li class="c-card-text-list-item">
+                  モーダル表示中は背景スクロールが無効化されます。
+                </li>
+                <li class="c-card-text-list-item">
+                  GSAPを使用して開閉時のアニメーションを実装しています。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- modal end -->
+        <!-- dropdown -->
+        <article id="dropdown" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <div class="dropdown-inner">
+              <button
+                type="button"
+                class="dropdown-button u-dropdown-button-hover js-dropdown-button"
+                lang="en"
+                aria-haspopup="menu"
+                aria-expanded="false"
+              >
+                <span class="u-visually-hidden">アカウント：山田太郎</span>
+              </button>
+              <nav
+                class="dropdown-nav-menu js-dropdown-nav"
+                aria-label="ドロップダウンメニュー"
+              >
+                <ul class="dropdown-menu-list">
+                  <li class="dropdown-menu-item">
+                    <a
+                      href="https://www.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >アカウント設定</a
+                    >
+                  </li>
+                  <li class="dropdown-menu-item">
+                    <a
+                      href="https://www.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >カード情報</a
+                    >
+                  </li>
+                  <li class="dropdown-menu-item">
+                    <a
+                      href="https://www.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >購入履歴</a
+                    >
+                  </li>
+                  <li class="dropdown-menu-item">
+                    <button class="logout-button" type="button">
+                      ログアウト
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Dropdown Menu</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                ボタンをクリックするとドロップダウンメニューがボタンの下に表示されます。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  メニュー外をクリックすることでメニューが閉じます。
+                </li>
+                <li class="c-card-text-list-item">
+                  Escapeキーでメニューが閉じます。
+                </li>
+                <li class="c-card-text-list-item">
+                  GSAPを使用して開閉時のアニメーションを実装しています。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- dropdown end -->
+        <!-- tab -->
+        <article id="tab" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <div class="tab-inner">
+              <ul class="tab-list">
+                <li class="tab-item">
+                  <button class="tab is-active" data-button="0">方丈記</button>
+                </li>
+                <li class="tab-item">
+                  <button class="tab" data-button="1">坊ちゃん</button>
+                </li>
+              </ul>
+              <div class="tab-contents-wrapper">
+                <div class="tab-contents is-active" data-content="0">
+                  <p>
+                    行く川のながれは絶えずして、しかも本の水にあらず。よどみに浮ぶうたかたは、かつ消えかつ結びて久しくとゞまることなし。世の中にある人とすみかと、またかくの如し。玉しきの都の中にむねをならべいらかをあらそへる、たかきいやしき人のすまひは、代々を經て盡きせぬものなれど、これをまことかと尋ぬれば、昔ありし家はまれなり。或はこぞ破れ（やけイ）てことしは造り、あるは大家ほろびて小家となる。住む人もこれにおなじ。（青空文庫より）
+                  </p>
+                </div>
+                <div class="tab-contents" data-content="1">
+                  <p>
+                    親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Tab Menu</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                タブをクリックすると各該当のコンテンツが表示されます。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  タブをクリックするとコンテンツが下から上にフェードインして表示されます。
+                </li>
+                <li class="c-card-text-list-item">
+                  GSAPを使用してアニメーションを実装しています。
+                </li>
+                <li class="c-card-text-list-item">
+                  タブ切替時、コンテンツの文章量によるガタツキが起きないように親要素にgridを指定。切替の際はvisibility:
+                  hidden;
+                  opacity:0;を設定して文章量が増えた場合に備え、コンテナ枠の高さに配慮しています。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- tab end -->
+        <!-- accordion -->
+        <article id="accordion" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <div class="accordion-inner">
+              <details class="accordion-details js-accordion-details">
+                <summary class="accordion-summary js-accordion-summary">
+                  FAQページを作成する目的は何ですか？
+                  <span class="accordion-icon">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </summary>
+
+                <div class="accordion-contents js-accordion-contents">
+                  <div class="accordion-contents-inner">
+                    <p>
+                      こちらに回答が入ります。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。（青空文庫より）
+                    </p>
+                  </div>
+                </div>
+              </details>
+
+              <details class="accordion-details js-accordion-details">
+                <summary class="accordion-summary js-accordion-summary">
+                  良いFAQの作り方のコツはありますか？
+                  <span class="accordion-icon">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </summary>
+
+                <div class="accordion-contents js-accordion-contents">
+                  <div class="accordion-contents-inner">
+                    <p>
+                      こちらに回答が入ります。親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+                    </p>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Accordion</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                質問事項をクリックすると回答部分が開閉します。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  コンテンツの高さを自動取得し、高さに応じたアニメーションを実行しています。
+                </li>
+                <li class="c-card-text-list-item">
+                  連打防止策としてアニメーション実行中はクリックイベントを無効化しています。
+                </li>
+                <li class="c-card-text-list-item">
+                  GSAPを使用してアニメーションを実装しています。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- accordion end -->
+        <!-- hamburger menu -->
+        <article id="hamburger-menu" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <img
+              src="img/top/img-hamburger-menu.webp"
+              width="1363"
+              height="884"
+              alt="ハンバーガーメニュー"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Hamburger Menu</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                ヘッダー右にある「MENU」ボタンをクリックするとナビゲーションメニューがモーダルで表示されます。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  「CLOSE」ボタンをクリックまたはEscapeキーを押すとナビゲーションメニューが閉じます。
+                </li>
+                <li class="c-card-text-list-item">
+                  ナビゲーションメニュー表示中は背景のスクロールを無効化し、スクロール位置を保持します。
+                </li>
+                <li class="c-card-text-list-item">
+                  各メニューをクリックするとスムーススクロールで該当のセクションに移動します。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- hamburger menu end -->
+        <!-- reveal header -->
+        <article id="reveal-header" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <img
+              src="img/top/img-hamburger-menu.webp"
+              width="1363"
+              height="884"
+              alt="ハンバーガーメニュー"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Reveal Header</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                ボタンをクリックするとドロップダウンメニューが表示されます。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  メニュー外をクリックすることでメニューが閉じます。
+                </li>
+                <li class="c-card-text-list-item">
+                  Escapeキーでメニューが閉じます。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- reveal header end -->
+        <!-- sticky cta button -->
+        <article id="sticky-cta" class="c-card u-mtb">
+          <div class="c-card-demo">
+            <img
+              src="img/top/img-hamburger-menu.webp"
+              width="1363"
+              height="884"
+              alt="ハンバーガーメニュー"
+              decoding="async"
+              loading="lazy"
+            />
+          </div>
+
+          <section class="c-card-text-container">
+            <div class="c-card-title-wrapper">
+              <h2 class="c-card-title" lang="en">Sticky CTA Button</h2>
+              <hr />
+            </div>
+            <div class="c-card-text-content">
+              <p class="c-card-text-main">
+                ボタンをクリックするとドロップダウンメニューが表示されます。
+              </p>
+              <ul class="c-card-text-list">
+                <li class="c-card-text-list-item">
+                  メニュー外をクリックすることでメニューが閉じます。
+                </li>
+                <li class="c-card-text-list-item">
+                  Escapeキーでメニューが閉じます。
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+        <!-- sticky cta button end -->
+      </div>
+
+      <!-- github-link -->
+      <section id="github-link" class="u-mtb">
+        <div class="github-link-container">
+          <a href="https://google.com" target="_blank" rel="noopener noreferrer"
+            >View Code</a
+          >
+        </div>
+
+        Web Interaction Patterns • Explore the Code on GitHub •
+        回るボタンをクリックするとGitHubのリポジトリに移動します。
+      </section>
+      <!-- github-link end -->
+      <!-- auto slider -->
+      <section id="auto-slider">
+        あとでSplideを使った自動スライダーを追加
+      </section>
+      <!-- auto slider end -->
+
+      <!-- card section end -->
+    </main>
+    <footer>
+      <small>© 2026 mizuho otani</small>
+    </footer>
+  </body>
+</html>

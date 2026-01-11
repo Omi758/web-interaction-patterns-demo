@@ -1,0 +1,66 @@
+@use "../../global" as g;
+
+/*!
+page > top > tab
+------------------------------
+*/
+.tab-inner {
+  width: 100%;
+  margin: 0 auto;
+  @include g.mq() {
+    padding: 0 40px;
+  }
+}
+.tab-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.tab {
+  width: 100%;
+  padding: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 3px solid var(--color-border-dark-gray);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  @include g.mq() {
+    font-size: 20px;
+  }
+}
+
+.tab:hover {
+  opacity: 1;
+}
+
+.tab.is-active {
+  opacity: 1;
+}
+
+.tab-contents-wrapper {
+  margin-top: 24px;
+  display: grid;
+  @include g.mq() {
+    margin-top: 32px;
+  }
+}
+.tab-contents {
+  grid-area: 1 / 1; // すべてのコンテンツを同じセルに配置
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tab-contents.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tab-contents p {
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-weight: 400;
+  @include g.mq() {
+    font-size: 16px;
+  }
+}
