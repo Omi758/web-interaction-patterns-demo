@@ -1082,28 +1082,32 @@ page > top > github-link
 ------------------------------
 */
 .github-link-container {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .circular-text {
+  position: absolute;
+  inset: 0;
+  margin: auto;
   color: var(--color-font-gray);
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   animation: rotate 20s linear infinite;
 }
 @media screen and (min-width: 768px) {
   .circular-text {
-    width: 280px;
-    height: 280px;
+    width: 400px;
+    height: 400px;
   }
 }
 
 .circular-text text {
   font-size: 16px;
   font-family: var(--font-family--en);
-  letter-spacing: 2px;
+  letter-spacing: 0.02em;
   fill: var(--color-font-gray);
   text-transform: uppercase;
 }
@@ -1120,5 +1124,50 @@ page > top > github-link
   fill: none;
   stroke: currentColor;
   stroke-width: 1;
-  opacity: 0.3;
+  opacity: 0.6;
+}
+
+.github-link-button {
+  position: relative;
+  z-index: 2;
+  width: 168px;
+  height: 168px;
+  border-radius: 50vh;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-bg-dark-gray);
+  color: var(--color-font-white);
+  font-family: var(--font-family--en);
+}
+@media screen and (min-width: 768px) {
+  .github-link-button {
+    width: 280px;
+    height: 280px;
+    gap: 10px;
+    font-size: 26px;
+  }
+}
+
+.github-link-button::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  -webkit-mask-image: url("../img/common/icon-github.svg");
+          mask-image: url("../img/common/icon-github.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  background-color: var(--color-font-white);
+}
+@media screen and (min-width: 768px) {
+  .github-link-button::before {
+    width: 44px;
+    height: 44px;
+  }
 }/*# sourceMappingURL=style.css.map */
