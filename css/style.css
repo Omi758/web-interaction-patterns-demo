@@ -1081,6 +1081,10 @@ page > top > top-accordion
 page > top > github-link
 ------------------------------
 */
+.github-link {
+  margin: 160px 0;
+}
+
 .github-link-container {
   position: relative;
   display: flex;
@@ -1130,16 +1134,18 @@ page > top > github-link
 .github-link-button {
   position: relative;
   z-index: 2;
-  width: 168px;
-  height: 168px;
+  width: 166px;
+  height: 166px;
   border-radius: 50vh;
   display: flex;
   gap: 8px;
   justify-content: center;
   align-items: center;
+  border: 1px solid var(--color-border-dark-gray);
   background-color: var(--color-bg-dark-gray);
   color: var(--color-font-white);
   font-family: var(--font-family--en);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .github-link-button {
@@ -1148,6 +1154,12 @@ page > top > github-link
     gap: 10px;
     font-size: 26px;
   }
+}
+
+.github-link-button:hover {
+  background-color: var(--color-hover-light-gray);
+  border-color: var(--color-border-light-gray);
+  color: var(--color-font-base);
 }
 
 .github-link-button::before {
@@ -1164,10 +1176,15 @@ page > top > github-link
   -webkit-mask-position: center;
           mask-position: center;
   background-color: var(--color-font-white);
+  transition: background-color 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .github-link-button::before {
     width: 44px;
     height: 44px;
   }
+}
+
+.github-link-button:hover::before {
+  background-color: var(--color-hover-black);
 }/*# sourceMappingURL=style.css.map */
