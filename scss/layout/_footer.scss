@@ -5,4 +5,11 @@ layout > footer
 ------------------------------
 */
 .footer {
+  background-color: var(--color-bg-black);
+  color: var(--color-font-extra-light-gray);
+  padding: 24px 0;
+  text-align: right;
+  @include g.mq() {
+    padding: 40px 0;
+  }
 }

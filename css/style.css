@@ -5,6 +5,8 @@ global > color
 :root {
   --color-font-base: #333;
   --color-font-gray: #888;
+  --color-font-light-gray: #aaa;
+  --color-font-extra-light-gray: #ccc;
   --color-font-white: #fff;
   --color-bg-base: #ddd;
   --color-bg-gray: #888;
@@ -591,6 +593,18 @@ layout > header
 layout > footer
 ------------------------------
 */
+.footer {
+  background-color: var(--color-bg-black);
+  color: var(--color-font-extra-light-gray);
+  padding: 24px 0;
+  text-align: right;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 40px 0;
+  }
+}
+
 /*!
 layout > hover
 ------------------------------
@@ -1202,4 +1216,13 @@ page > top > github-link
 
 .github-link-button:hover::before {
   background-color: var(--color-hover-black);
+}
+
+/*!
+page > top > auto-slider
+------------------------------
+*/
+.auto-slider {
+  color: var(--color-font-white);
+  background-color: var(--color-bg-black);
 }/*# sourceMappingURL=style.css.map */
