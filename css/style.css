@@ -1081,15 +1081,30 @@ page > top > top-accordion
 page > top > github-link
 ------------------------------
 */
-.github-link {
-  margin: 160px 0;
+.github-link-container {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 80px auto;
+}
+@media screen and (min-width: 768px) {
+  .github-link-container {
+    margin: 180px auto;
+  }
 }
 
-.github-link-container {
+.github-link {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 240px;
+  height: 240px;
+}
+@media screen and (min-width: 768px) {
+  .github-link {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 .circular-text {

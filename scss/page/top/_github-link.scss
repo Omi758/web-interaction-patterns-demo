@@ -4,15 +4,26 @@
 page > top > github-link
 ------------------------------
 */
-.github-link {
-  margin: 160px 0;
+.github-link-container {
+  width: fit-content;
+  margin: 80px auto;
+  @include g.mq() {
+    margin: 180px auto;
+  }
 }
 
-.github-link-container {
+.github-link {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  // 回転する文字と同じサイズを指定してリンクエリアを確保
+  width: 240px;
+  height: 240px;
+  @include g.mq() {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 .circular-text {
