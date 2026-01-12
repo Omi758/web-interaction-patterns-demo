@@ -4,11 +4,46 @@
 page > top > auto-slider
 ------------------------------
 */
+
 .auto-slider {
   padding: 36px 0;
   color: var(--color-font-white);
   background-color: var(--color-bg-extra-black);
+  overflow: hidden;
   @include g.mq() {
     padding: 80px 0;
+  }
+
+  .splide__slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-card {
+    position: relative;
+    width: 280px;
+    aspect-ratio: 4 / 5;
+    perspective: 1000px;
+    @include g.mq() {
+      width: 400px;
+    }
+  }
+
+  .slider-card-front,
+  .slider-card-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+  }
+
+  .slider-card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: var(--color-bg-black);
+    color: var(--color-font-white);
+    text-align: center;
+    transform: rotateY(180deg);
   }
 }
