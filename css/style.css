@@ -1263,15 +1263,15 @@ page > top > auto-slider
   position: absolute;
   inset: 0;
   backface-visibility: hidden;
-  /* 面の見え方を安定させる */
-  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
 }
 .auto-slider .slider-card-front {
   z-index: 2;
+  transform: translateZ(0);
 }
 .auto-slider .slider-card-back {
   z-index: 1;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0);
   display: flex;
   align-items: center;
   justify-content: center;

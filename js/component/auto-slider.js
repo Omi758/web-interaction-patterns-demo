@@ -46,19 +46,15 @@ export const initializeAutoSlider = () => {
   // 非アクティブ(clones)を確実に表に戻す
   const resetNonActiveCards = () => {
     autoSlider
-      .querySelectorAll(".slider-card:not(.is-flipped)")
+      .querySelectorAll(
+        '.splide__slide[aria-hidden="true"] .slider-card.is-flipped'
+      )
       .forEach((card) => card.classList.remove("is-flipped"));
   };
 
-  // 移動の「直前」にリセット(ちらつき防止に有効)
-  splide.on("move", () => {
-    resetNonActiveCards();
-  });
-
-  // 念のため「移動後」にも(loop/clone対策)
-  splide.on("moved", () => {
-    resetNonActiveCards();
-  });
+  // AutoScroll中でも「スライドが切り替わる瞬間」にリセット
+  splide.on("moved", resetNonActiveCards);
+  splide.on("mounted", resetNonActiveCards);
 
   // カードクリック制御(反転 + 停止→再開)
   autoSlider.addEventListener("click", (e) => {
@@ -68,22 +64,16 @@ export const initializeAutoSlider = () => {
     // カード反転
     card.classList.toggle("is-flipped");
 
-    // autoScrollを一時停止
-    if (splide.Components?.AutoScroll) {
-      splide.Components.AutoScroll.pause();
-    }
+    // 一時停止
+    splide.Components?.AutoScroll?.pause();
 
     // 既存タイマーをクリア_連打時の多重予約を防止
-    if (autoScrollTimer) {
-      clearTimeout(autoScrollTimer);
-    }
+    if (autoScrollTimer) clearTimeout(autoScrollTimer);
 
     // 一定時間後(2秒後)に再開
     autoScrollTimer = setTimeout(() => {
       resetNonActiveCards();
-      if (splide.Components?.AutoScroll) {
-        splide.Components.AutoScroll.play();
-      }
+      splide.Components.AutoScroll.play();
     }, 2000);
   });
 

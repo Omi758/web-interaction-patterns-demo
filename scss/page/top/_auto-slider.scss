@@ -41,20 +41,19 @@ page > top > auto-slider
     position: absolute;
     inset: 0;
     backface-visibility: hidden;
-
-    /* 面の見え方を安定させる */
-    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
   }
 
   /* 表面(画像)はそのまま */
   .slider-card-front {
     z-index: 2;
+    transform: translateZ(0);
   }
 
   /* 裏面(テキスト)は最初から裏向きで待機*/
   .slider-card-back {
     z-index: 1;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(0); // 回転＋Zを両立
 
     display: flex;
     align-items: center;
