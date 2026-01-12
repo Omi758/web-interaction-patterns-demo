@@ -7,7 +7,7 @@ page > top > auto-slider
 .auto-slider {
   padding: 36px 0;
   color: var(--color-font-white);
-  background-color: var(--color-bg-black);
+  background-color: var(--color-bg-extra-black);
   @include g.mq() {
     padding: 80px 0;
   }

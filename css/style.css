@@ -8,6 +8,7 @@ global > color
   --color-font-light-gray: #aaa;
   --color-font-extra-light-gray: #ccc;
   --color-font-white: #fff;
+  --color-bg-extra-black: #111;
   --color-bg-base: #ddd;
   --color-bg-gray: #888;
   --color-bg-dark-gray: #555;
@@ -594,7 +595,7 @@ layout > footer
 ------------------------------
 */
 .footer {
-  background-color: var(--color-bg-black);
+  background-color: var(--color-bg-extra-black);
   color: var(--color-font-extra-light-gray);
   padding: 24px 0;
   text-align: right;
@@ -1225,7 +1226,7 @@ page > top > auto-slider
 .auto-slider {
   padding: 36px 0;
   color: var(--color-font-white);
-  background-color: var(--color-bg-black);
+  background-color: var(--color-bg-extra-black);
 }
 @media screen and (min-width: 768px) {
   .auto-slider {
