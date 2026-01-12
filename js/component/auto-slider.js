@@ -4,8 +4,7 @@
  * 自動スライドカード
  * 仕様：
  * -スライドカードをclickするとカードが反転する
- * -click時にautoScrollを一時停止
- * -一定時間後にautoScrollを再開
+ * -スライドは常に動き続ける（一時停止なし）
  * -スライドカードが画面外に出たらカードが反転をリセット
  */
 
@@ -41,8 +40,6 @@ export const initializeAutoSlider = () => {
   // AutoScroll Extensionを有効化
   splide.mount(window.splide.Extensions);
 
-  let autoScrollTimer = null;
-
   // 画面外に完全に出たカードのみリセット
   const resetOffscreenCards = () => {
     const sliderRect = autoSlider.getBoundingClientRect();
@@ -62,24 +59,12 @@ export const initializeAutoSlider = () => {
   // 定期的に画面外チェック（auto-scrollは連続移動なのでintervalで監視）
   setInterval(resetOffscreenCards, 500);
 
-  // カードクリック制御(反転 + 停止→再開)
+  // カードクリック制御（反転のみ、停止なし）
   autoSlider.addEventListener("click", (e) => {
     const card = e.target.closest(".slider-card");
     if (!card) return;
 
     // カード反転
     card.classList.toggle("is-flipped");
-
-    // 一時停止
-    splide.Components?.AutoScroll?.pause();
-
-    // 既存タイマーをクリア_連打時の多重予約を防止
-    if (autoScrollTimer) clearTimeout(autoScrollTimer);
-
-    // 一定時間後(2秒後)に再開
-    autoScrollTimer = setTimeout(() => {
-      resetOffscreenCards();
-      splide.Components.AutoScroll.play();
-    }, 2000);
   });
 };

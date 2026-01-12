@@ -1240,6 +1240,8 @@ page > top > auto-slider
 .auto-slider .splide__slide {
   display: flex;
   justify-content: center;
+  transform-style: flat;
+  isolation: isolate;
 }
 .auto-slider .slider-card {
   position: relative;
@@ -1263,13 +1265,15 @@ page > top > auto-slider
   inset: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: transform;
 }
 .auto-slider .slider-card-front {
   z-index: 2;
 }
 .auto-slider .slider-card-back {
   z-index: 1;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -14,9 +14,12 @@ page > top > auto-slider
     padding: 80px 0;
   }
 
+  // Splideの3D空間とカードの3D空間を分離
   .splide__slide {
     display: flex;
     justify-content: center;
+    transform-style: flat; // Splideのtransformとカードの3Dを分離
+    isolation: isolate; // 新しいスタッキングコンテキストを作成
   }
 
   .slider-card {
@@ -41,6 +44,9 @@ page > top > auto-slider
     inset: 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    // GPUレイヤーを強制してレンダリングを安定化
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   /* 表面(画像) */
@@ -51,7 +57,7 @@ page > top > auto-slider
   /* 裏面(テキスト)は最初から裏向きで待機 */
   .slider-card-back {
     z-index: 1;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) translateZ(0);
 
     display: flex;
     align-items: center;
