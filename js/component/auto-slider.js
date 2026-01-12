@@ -16,7 +16,7 @@ export const initializeAutoSlider = () => {
 
   const splide = new Splide(autoSlider, {
     type: "loop",
-    perPage: 3,
+    perPage: 4,
     gap: "24px",
     arrows: false,
     pagination: false,
@@ -43,6 +43,23 @@ export const initializeAutoSlider = () => {
 
   let autoScrollTimer = null;
 
+  // 非アクティブ(clones)を確実に表に戻す
+  const resetNonActiveCards = () => {
+    autoSlider
+      .querySelectorAll(".slider-card:not(.is-flipped)")
+      .forEach((card) => card.classList.remove("is-flipped"));
+  };
+
+  // 移動の「直前」にリセット(ちらつき防止に有効)
+  splide.on("move", () => {
+    resetNonActiveCards();
+  });
+
+  // 念のため「移動後」にも(loop/clone対策)
+  splide.on("moved", () => {
+    resetNonActiveCards();
+  });
+
   // カードクリック制御(反転 + 停止→再開)
   autoSlider.addEventListener("click", (e) => {
     const card = e.target.closest(".slider-card");
@@ -63,6 +80,7 @@ export const initializeAutoSlider = () => {
 
     // 一定時間後(2秒後)に再開
     autoScrollTimer = setTimeout(() => {
+      resetNonActiveCards();
       if (splide.Components?.AutoScroll) {
         splide.Components.AutoScroll.play();
       }
