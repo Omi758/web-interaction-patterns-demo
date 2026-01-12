@@ -27,6 +27,10 @@ page > top > auto-slider
     @include g.mq() {
       width: 400px;
     }
+
+    &.is-flipped {
+      transform: rotateY(180deg);
+    }
   }
 
   .slider-card-front,

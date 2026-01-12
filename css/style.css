@@ -1249,6 +1249,9 @@ page > top > auto-slider
     width: 400px;
   }
 }
+.auto-slider .slider-card.is-flipped {
+  transform: rotateY(180deg);
+}
 .auto-slider .slider-card-front,
 .auto-slider .slider-card-back {
   position: absolute;
