@@ -43,18 +43,24 @@ export const initializeAutoSlider = () => {
 
   let autoScrollTimer = null;
 
-  // 非アクティブ(clones)を確実に表に戻す
-  const resetNonActiveCards = () => {
-    autoSlider
-      .querySelectorAll(
-        '.splide__slide[aria-hidden="true"] .slider-card.is-flipped'
-      )
-      .forEach((card) => card.classList.remove("is-flipped"));
+  // 画面外に完全に出たカードのみリセット
+  const resetOffscreenCards = () => {
+    const sliderRect = autoSlider.getBoundingClientRect();
+
+    autoSlider.querySelectorAll(".slider-card.is-flipped").forEach((card) => {
+      const cardRect = card.getBoundingClientRect();
+      // カードが完全に画面外（スライダー領域外）に出た場合のみリセット
+      const isCompletelyOffscreen =
+        cardRect.right < sliderRect.left || cardRect.left > sliderRect.right;
+
+      if (isCompletelyOffscreen) {
+        card.classList.remove("is-flipped");
+      }
+    });
   };
 
-  // AutoScroll中でも「スライドが切り替わる瞬間」にリセット
-  splide.on("moved", resetNonActiveCards);
-  splide.on("mounted", resetNonActiveCards);
+  // 定期的に画面外チェック（auto-scrollは連続移動なのでintervalで監視）
+  setInterval(resetOffscreenCards, 500);
 
   // カードクリック制御(反転 + 停止→再開)
   autoSlider.addEventListener("click", (e) => {
@@ -72,17 +78,8 @@ export const initializeAutoSlider = () => {
 
     // 一定時間後(2秒後)に再開
     autoScrollTimer = setTimeout(() => {
-      resetNonActiveCards();
+      resetOffscreenCards();
       splide.Components.AutoScroll.play();
     }, 2000);
-  });
-
-  /*
-   * スライドが移動時に反転リセット
-   */
-  splide.on("moved", () => {
-    autoSlider
-      .querySelectorAll(".slider-card.is-flipped")
-      .forEach((card) => card.classList.remove("is-flipped"));
   });
 };

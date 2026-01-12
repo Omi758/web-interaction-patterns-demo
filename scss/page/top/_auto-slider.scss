@@ -26,7 +26,6 @@ page > top > auto-slider
     perspective: 1000px;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
-    will-change: transform; // 揺れ対策
     @include g.mq() {
       width: 400px;
     }
@@ -44,16 +43,15 @@ page > top > auto-slider
     -webkit-backface-visibility: hidden;
   }
 
-  /* 表面(画像)はそのまま */
+  /* 表面(画像) */
   .slider-card-front {
     z-index: 2;
-    transform: translateZ(0);
   }
 
-  /* 裏面(テキスト)は最初から裏向きで待機*/
+  /* 裏面(テキスト)は最初から裏向きで待機 */
   .slider-card-back {
     z-index: 1;
-    transform: rotateY(180deg) translateZ(0); // 回転＋Zを両立
+    transform: rotateY(180deg);
 
     display: flex;
     align-items: center;

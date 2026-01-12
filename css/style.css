@@ -1229,8 +1229,8 @@ page > top > auto-slider
   color: var(--color-font-white);
   background-color: var(--color-bg-extra-black);
   overflow: hidden;
-  /* 表面(画像)はそのまま */
-  /* 裏面(テキスト)は最初から裏向きで待機*/
+  /* 表面(画像) */
+  /* 裏面(テキスト)は最初から裏向きで待機 */
 }
 @media screen and (min-width: 768px) {
   .auto-slider {
@@ -1248,7 +1248,6 @@ page > top > auto-slider
   perspective: 1000px;
   transform-style: preserve-3d;
   transition: transform 0.6s ease;
-  will-change: transform;
 }
 @media screen and (min-width: 768px) {
   .auto-slider .slider-card {
@@ -1267,11 +1266,10 @@ page > top > auto-slider
 }
 .auto-slider .slider-card-front {
   z-index: 2;
-  transform: translateZ(0);
 }
 .auto-slider .slider-card-back {
   z-index: 1;
-  transform: rotateY(180deg) translateZ(0);
+  transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
