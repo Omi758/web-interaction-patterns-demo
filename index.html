@@ -41,6 +41,7 @@
     />
 
     <!-- css -->
+    <link rel="stylesheet" href="css/vendor/splide.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- noindex_実案件では削除のこと！！ -->
@@ -48,6 +49,7 @@
 
     <!-- js -->
     <script src="js/vendor/gsap.min.js" defer></script>
+    <script src="js/vendor/splide.min.js" defer></script>
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
@@ -593,7 +595,14 @@
       </section>
       <!-- github-link end -->
       <!-- auto slider -->
-      <section id="auto-slider">
+      <section id="auto-slider" class="auto-slider u-mtb">
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"></li>
+            </ul>
+          </div>
+        </div>
         あとでSplideを使った自動スライダーを追加
       </section>
       <!-- auto slider end -->
