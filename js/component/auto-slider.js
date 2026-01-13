@@ -3,9 +3,10 @@
  * ------------------------------
  * 自動スライドカード
  * 仕様：
- * -スライドカードをclickするとカードが反転する
- * -スライドは常に動き続ける（一時停止なし）
- * -スライドカードが画面外に出たらカードが反転をリセット
+ * - スライドカードをclickするとカードが反転する
+ * - スライドは常に動き続ける（一時停止なし）
+ * - スライドカードが画面外に出たらカードが反転をリセット
+ * - クローンと元スライドの状態を同期
  */
 
 export const initializeAutoSlider = () => {
@@ -49,7 +50,24 @@ export const initializeAutoSlider = () => {
   // AutoScroll Extensionを有効化
   splide.mount(window.splide.Extensions);
 
-  // 画面外に完全に出たカードのみリセット
+  /**
+   * 同じ画像を持つカード（クローン含む）を全て取得
+   * @param {HTMLElement} card - 基準となるカード要素
+   * @returns {NodeList} - 同じ画像srcを持つ全てのカード
+   */
+  const getSameCards = (card) => {
+    const img = card.querySelector("img");
+    if (!img) return [];
+
+    const imgSrc = img.getAttribute("src");
+    return autoSlider.querySelectorAll(
+      `.slider-card:has(img[src="${imgSrc}"])`
+    );
+  };
+
+  /**
+   * 画面外に完全に出たカードのみリセット
+   */
   const resetOffscreenCards = () => {
     const sliderRect = autoSlider.getBoundingClientRect();
 
@@ -60,20 +78,34 @@ export const initializeAutoSlider = () => {
         cardRect.right < sliderRect.left || cardRect.left > sliderRect.right;
 
       if (isCompletelyOffscreen) {
-        card.classList.remove("is-flipped");
+        // 同じカード（クローン含む）を全てリセット
+        const sameCards = getSameCards(card);
+        sameCards.forEach((sameCard) => {
+          sameCard.classList.remove("is-flipped");
+        });
       }
     });
   };
 
-  // 定期的に画面外チェック（auto-scrollは連続移動なのでintervalで監視）
-  setInterval(resetOffscreenCards, 500);
-
-  // カードクリック制御（反転のみ、停止なし）
+  /**
+   * カードクリック制御（反転のみ、停止なし）
+   * クローンと元スライドの状態を同期
+   */
   autoSlider.addEventListener("click", (e) => {
     const card = e.target.closest(".slider-card");
     if (!card) return;
 
-    // カード反転
-    card.classList.toggle("is-flipped");
+    // 現在の状態を取得
+    const isCurrentlyFlipped = card.classList.contains("is-flipped");
+
+    // 同じカード（クローン含む）を全て取得して状態を同期
+    const sameCards = getSameCards(card);
+    sameCards.forEach((sameCard) => {
+      if (isCurrentlyFlipped) {
+        sameCard.classList.remove("is-flipped");
+      } else {
+        sameCard.classList.add("is-flipped");
+      }
+    });
   });
 };
