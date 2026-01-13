@@ -15,8 +15,8 @@ export const initializeAutoSlider = () => {
 
   const splide = new Splide(autoSlider, {
     type: "loop",
-    perPage: 4,
-    gap: "24px",
+    fixedWidth: "360px",
+    gap: "32px",
     arrows: false,
     pagination: false,
     drag: false,
@@ -30,9 +30,18 @@ export const initializeAutoSlider = () => {
     },
 
     breakpoints: {
-      768: {
-        perPage: 1,
-        gap: "16px",
+      1079: {
+        fixedWidth: "360px",
+        gap: "32px",
+      },
+
+      767: {
+        fixedWidth: "280px",
+        gap: "32px",
+      },
+      499: {
+        gap: "24px",
+        fixedWidth: "280px",
       },
     },
   });

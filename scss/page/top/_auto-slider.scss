@@ -24,14 +24,11 @@ page > top > auto-slider
 
   .slider-card {
     position: relative;
-    width: 280px;
+    width: 100%;
     aspect-ratio: 4 / 5;
     perspective: 1000px;
     transform-style: preserve-3d;
     transition: transform 0.6s ease;
-    @include g.mq() {
-      width: 400px;
-    }
 
     &.is-flipped {
       transform: rotateY(180deg);
