@@ -6,12 +6,12 @@ page > top > auto-slider
 */
 
 .auto-slider {
-  padding: 36px 0;
+  padding-top: 100px;
   color: var(--color-font-white);
   background-color: var(--color-bg-extra-black);
   overflow: hidden;
   @include g.mq() {
-    padding: 80px 0;
+    padding-top: 140px;
   }
 
   // Splideの3D空間とカードの3D空間を分離
@@ -66,10 +66,43 @@ page > top > auto-slider
     text-align: center;
   }
 
+  .slider-card-back p {
+    font-size: 18px;
+    font-family: var(--font-family--en);
+    text-align: center;
+  }
+
   .slider-card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+}
+
+.auto-slider-credits-container {
+  margin: 32px 24px 0;
+  text-align: end;
+  @include g.mq() {
+    margin: 48px 40px 0;
+  }
+}
+
+.auto-slider-credits-title {
+  font-size: 28px;
+  font-family: var(--font-family--en);
+  text-align: end;
+  @include g.mq() {
+    font-size: 32px;
+  }
+}
+
+.auto-slider-credits-item {
+  font-size: 14px;
+  color: var(--color-font-light-gray);
+  line-height: 1.4;
+
+  @include g.mq() {
+    font-size: 16px;
   }
 }
