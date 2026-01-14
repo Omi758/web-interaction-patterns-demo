@@ -6,6 +6,7 @@ import { initializeDropdown } from "./component/dropdown.js";
 import { initializeTabMenu } from "./component/tab-menu.js";
 import { initializeAccordion } from "./component/accordion.js";
 import { initializeAutoSlider } from "./component/auto-slider.js";
+import { initializeStickyHeader } from "./component/sticky-header.js";
 // 全ての初期化を実行
 initializeHamburgerMenu();
 initializeHeaderBackgroundToggle();
@@ -15,3 +16,4 @@ initializeDropdown();
 initializeTabMenu();
 initializeAccordion();
 initializeAutoSlider();
+initializeStickyHeader();
