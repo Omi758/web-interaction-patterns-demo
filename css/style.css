@@ -27,6 +27,7 @@ global > color
   --color-hover-white: #fff;
   --color-hover-light-gray: #ccc;
   --color-hover-black: #333;
+  --color-bg-header-fixed: rgba(51, 51, 51, 0.7);
 }
 
 /*!
