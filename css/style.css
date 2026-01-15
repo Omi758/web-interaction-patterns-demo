@@ -294,6 +294,7 @@ utility > utility
 component > button
 ------------------------------
 */
+/* ボタン共通 */
 .c-button {
   padding: 10px 20px;
   border-radius: 8px;
@@ -307,12 +308,13 @@ component > button
   line-height: 1.5;
 }
 
-.fixed-cta-button {
+/* スクロール連動CTAボタン */
+.c-cta-button {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .fixed-cta-button {
-    display: flex;
+  .c-cta-button {
+    display: none;
     flex-direction: column;
     position: fixed;
     bottom: 16px;
@@ -334,7 +336,7 @@ component > button
   }
 }
 @media screen and (min-width: 1200px) {
-  .fixed-cta-button {
+  .c-cta-button {
     width: 120px;
     height: 120px;
     font-size: 18px;
@@ -342,7 +344,7 @@ component > button
   }
 }
 @media screen and (min-width: 768px) {
-  .fixed-cta-button::before {
+  .c-cta-button::before {
     content: "";
     display: block;
     width: 36px;
@@ -359,19 +361,25 @@ component > button
   }
 }
 @media screen and (min-width: 1200px) {
-  .fixed-cta-button::before {
+  .c-cta-button::before {
     width: 40px;
     height: 40px;
   }
 }
 
-.fixed-cta-button:hover {
+.c-cta-button:hover {
   background-color: var(--color-hover-light-gray);
   border-color: var(--color-border-light-gray);
   color: var(--color-font-base);
 }
-.fixed-cta-button:hover::before {
+.c-cta-button:hover::before {
   background-color: var(--color-font-base);
+}
+
+@media screen and (min-width: 768px) {
+  .c-cta-button.is-fixed {
+    display: flex;
+  }
 }
 
 /*!

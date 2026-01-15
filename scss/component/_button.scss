@@ -4,6 +4,7 @@
 component > button
 ------------------------------
 */
+/* ボタン共通 */
 .c-button {
   padding: 10px 20px;
   border-radius: 8px;
@@ -17,10 +18,11 @@ component > button
   line-height: 1.5;
 }
 
-.fixed-cta-button {
+/* スクロール連動CTAボタン */
+.c-cta-button {
   display: none;
   @include g.mq() {
-    display: flex;
+    display: none; //初期設定(非表示)
     flex-direction: column;
     position: fixed;
     bottom: 16px;
@@ -66,11 +68,17 @@ component > button
   }
 }
 
-.fixed-cta-button:hover {
+.c-cta-button:hover {
   background-color: var(--color-hover-light-gray);
   border-color: var(--color-border-light-gray);
   color: var(--color-font-base);
   &::before {
     background-color: var(--color-font-base);
+  }
+}
+
+.c-cta-button.is-fixed {
+  @include g.mq() {
+    display: flex;
   }
 }
