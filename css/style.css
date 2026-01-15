@@ -1402,4 +1402,30 @@ page > top > auto-slider
   .auto-slider-credits-item {
     font-size: 16px;
   }
+}
+
+/*!
+page > top > hamburger-menu
+------------------------------
+*/
+.hamburger-menu-image {
+  width: 100%;
+  aspect-ratio: 1363/884;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/*!
+page > top > sticky-header
+------------------------------
+*/
+.sticky-header-image {
+  width: 100%;
+  aspect-ratio: 1330/754;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }/*# sourceMappingURL=style.css.map */

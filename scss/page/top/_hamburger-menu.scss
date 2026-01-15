@@ -1,0 +1,12 @@
+@use "../../global" as g;
+
+/*!
+page > top > hamburger-menu
+------------------------------
+*/
+.hamburger-menu-image {
+  width: 100%;
+  aspect-ratio: 1363 / 884;
+  object-fit: cover;
+  object-position: center;
+}

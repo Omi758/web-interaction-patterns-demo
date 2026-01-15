@@ -1,0 +1,12 @@
+@use "../../global" as g;
+
+/*!
+page > top > sticky-header
+------------------------------
+*/
+.sticky-header-image {
+  width: 100%;
+  aspect-ratio: 1330 / 754;
+  object-fit: cover;
+  object-position: center;
+}

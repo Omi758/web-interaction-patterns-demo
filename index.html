@@ -462,6 +462,7 @@
           <div class="c-card-demo">
             <img
               src="img/top/img-hamburger-menu.webp"
+              class="hamburger-menu-image"
               width="1363"
               height="884"
               alt="ハンバーガーメニュー"
@@ -498,10 +499,11 @@
         <article id="sticky-header" class="c-card u-mtb">
           <div class="c-card-demo">
             <img
-              src="img/top/img-hamburger-menu.webp"
-              width="1363"
-              height="884"
-              alt="ハンバーガーメニュー"
+              src="img/top/img-sticky-header.webp"
+              class="sticky-header-image"
+              width="1330"
+              height="754"
+              alt="スクロール連動ヘッダー表示"
               decoding="async"
               loading="lazy"
             />
@@ -514,14 +516,14 @@
             </div>
             <div class="c-card-text-content">
               <p class="c-card-text-main">
-                ボタンをクリックするとドロップダウンメニューが表示されます。
+                ScrollTriggerを使用し、スクロール連動でヘッダーを固定表示します。
               </p>
               <ul class="c-card-text-list">
                 <li class="c-card-text-list-item">
-                  メニュー外をクリックすることでメニューが閉じます。
+                  画面上端がKVよりも下に到達したらヘッダーを固定表示し、KVよりも上に戻ると位置に戻します。
                 </li>
                 <li class="c-card-text-list-item">
-                  Escapeキーでメニューが閉じます。
+                  GSAPを使用してアニメーションを実装しています。
                 </li>
               </ul>
             </div>
@@ -532,10 +534,10 @@
         <article id="sticky-cta" class="c-card u-mtb js-sticky-cta">
           <div class="c-card-demo">
             <img
-              src="img/top/img-hamburger-menu.webp"
-              width="1363"
-              height="884"
-              alt="ハンバーガーメニュー"
+              src="img/top/img-sticky-cta.webp"
+              width="1426"
+              height="819"
+              alt="スクロール連動CTAボタン"
               decoding="async"
               loading="lazy"
             />
@@ -548,14 +550,18 @@
             </div>
             <div class="c-card-text-content">
               <p class="c-card-text-main">
-                ボタンをクリックするとドロップダウンメニューが表示されます。
+                ScrollTriggerを使用し、スクロール連動で画面右下にCTAボタンを表示します。
               </p>
               <ul class="c-card-text-list">
                 <li class="c-card-text-list-item">
-                  メニュー外をクリックすることでメニューが閉じます。
+                  画面上端がheaderの下端に達したらCTAボタンを表示します。
                 </li>
                 <li class="c-card-text-list-item">
-                  Escapeキーでメニューが閉じます。
+                  画面下端がSticky CTA
+                  Buttonセクションの下端に達したらCTAボタンを非表示します。
+                </li>
+                <li class="c-card-text-list-item">
+                  SPサイズ(767px以下)ではCTAボタン非表示になります。
                 </li>
               </ul>
             </div>
