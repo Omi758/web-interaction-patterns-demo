@@ -684,6 +684,11 @@ layout > footer
   }
 }
 
+.footer small {
+  font-size: 14px;
+  font-family: var(--font-family--en);
+}
+
 /*!
 layout > hover
 ------------------------------
@@ -1389,6 +1394,7 @@ page > top > auto-slider
 
 .auto-slider-credits-item {
   font-size: 14px;
+  font-family: var(--font-family--en);
   color: var(--color-font-light-gray);
   line-height: 1.4;
 }
