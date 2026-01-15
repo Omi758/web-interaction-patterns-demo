@@ -47,6 +47,6 @@ export const initializeStickyHeader = () => {
     // ここは「関数を実行」ではなく「関数を渡す」
     onEnter: showStickyHeader,
     onLeaveBack: hideStickyHeader,
-    markers: true, // マーカーを表示
+    // markers: true, // マーカーを表示
   });
 };

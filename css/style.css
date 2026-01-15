@@ -55,6 +55,7 @@ global > z-index
 */
 :root {
   --z-index-modal: 100;
+  --z-index-fixed-btn: 80;
   --z-index-header: 30;
   --z-index-menu: 10;
   --z-index-default: 1;
@@ -306,6 +307,73 @@ component > button
   line-height: 1.5;
 }
 
+.fixed-cta-button {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .fixed-cta-button {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50vh;
+    border: 1px solid var(--color-border-dark-gray);
+    background-color: var(--color-bg-dark-gray);
+    color: var(--color-font-white);
+    font-family: var(--font-family--en);
+    font-size: 14px;
+    line-height: 1.2;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    z-index: var(--z-index-fixed-btn);
+    transition: background-color 0.3s ease, border 0.3s ease, color 0.3s ease;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fixed-cta-button {
+    width: 120px;
+    height: 120px;
+    font-size: 18px;
+    gap: 8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fixed-cta-button::before {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 36px;
+    -webkit-mask-image: url("../img/common/icon-github.svg");
+            mask-image: url("../img/common/icon-github.svg");
+    -webkit-mask-size: contain;
+            mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+            mask-position: center;
+    background-color: var(--color-font-white);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .fixed-cta-button::before {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.fixed-cta-button:hover {
+  background-color: var(--color-hover-light-gray);
+  border-color: var(--color-border-light-gray);
+  color: var(--color-font-base);
+}
+.fixed-cta-button:hover::before {
+  background-color: var(--color-font-base);
+}
+
 /*!
 component > title
 ------------------------------
@@ -464,7 +532,7 @@ layout > header
   left: 0;
   width: 100%;
   z-index: var(--z-index-header);
-  padding: 24px 19px;
+  padding: 18px 19px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -472,7 +540,7 @@ layout > header
 }
 @media screen and (min-width: 768px) {
   .header {
-    padding: 24px 64px;
+    padding: 18px 64px;
   }
 }
 

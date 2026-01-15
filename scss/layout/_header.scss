@@ -10,13 +10,13 @@ layout > header
   left: 0;
   width: 100%;
   z-index: var(--z-index-header);
-  padding: 24px 19px;
+  padding: 18px 19px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
   @include g.mq() {
-    padding: 24px 64px;
+    padding: 18px 64px;
   }
 }
 
