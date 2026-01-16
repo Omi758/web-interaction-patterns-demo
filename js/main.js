@@ -8,6 +8,7 @@ import { initializeAccordion } from "./component/accordion.js";
 import { initializeAutoSlider } from "./component/auto-slider.js";
 import { initializeStickyHeader } from "./component/sticky-header.js";
 import { initializeStickyCta } from "./component/sticky-cta.js";
+import { initializeSmoothScroll } from "./component/smooth-scroll.js";
 // 全ての初期化を実行
 initializeHamburgerMenu();
 initializeHeaderBackgroundToggle();
@@ -19,3 +20,4 @@ initializeAccordion();
 initializeAutoSlider();
 initializeStickyHeader();
 initializeStickyCta();
+initializeSmoothScroll();
