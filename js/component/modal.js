@@ -7,10 +7,6 @@ export const initializeModal = () => {
 
   if (!modal || !modalOverlay || !modalCloseBtn || !modalOpenBtn) return;
 
-  // スクロールバーの幅を取得
-  const getScrollbarWidth = () => {
-    return window.innerWidth - document.documentElement.clientWidth;
-  };
 
   // モーダルopen
   const openModal = () => {
