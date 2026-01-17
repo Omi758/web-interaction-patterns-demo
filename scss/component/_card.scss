@@ -28,10 +28,8 @@ component > card
 
 // カードテキストコンテナ
 .c-card-text-container {
-  // margin-top: 48px;
 margin-bottom: 48px;
   @include g.mq() {
-    // margin-top: 80px;
     margin-bottom: 96px;
   }
 }
@@ -74,7 +72,6 @@ margin-bottom: 48px;
 
 // カードタイトル
 .c-card-title {
-  // max-width: 150px;
   font-size: 28px;
   font-family: var(--font-family--en);
   font-weight: 600;
@@ -89,19 +86,12 @@ margin-bottom: 48px;
   }
 }
 
-// 罫線（hr）
-.c-card-title-wrapper hr {
-  margin: 0;
-  border: none; //defaultをリセット
-  height: 0; //defaultをリセット
-  border-top: 1px dotted var(--color-border-light-gray);
-}
 
 // カードテキスト
 .c-card-text-content {
   margin-top: 16px;
   display: grid;
-  gap: 8px;
+  gap: 16px;
   @include g.mq() {
     margin-top: 24px;
   }
@@ -110,7 +100,9 @@ margin-bottom: 48px;
 // カードテキストメイン
 .c-card-text-main {
   line-height: 1.4;
+  font-size: 18px;
   @include g.mq() {
+    font-size: 20px;
   }
 }
 
