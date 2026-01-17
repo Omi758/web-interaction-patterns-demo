@@ -25,7 +25,7 @@ page > top > modal
 
 // モーダル背景(デフォルトの設定_上書き)
 .modal::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
 }
 
 .modal-contents-inner {
