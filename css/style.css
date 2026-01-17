@@ -396,13 +396,13 @@ component > card
 
 .c-card {
   counter-increment: number;
-  padding: 80px 24px 24px;
+  padding: 40px 24px 40px;
   border: 1px solid var(--color-border-light-gray);
   border-radius: 8px;
 }
 @media screen and (min-width: 768px) {
   .c-card {
-    padding: 96px 40px 40px;
+    padding: 48px 56px 72px;
   }
 }
 
@@ -412,23 +412,23 @@ component > card
 }
 
 .c-card-text-container {
-  margin-top: 48px;
+  margin-bottom: 48px;
 }
 @media screen and (min-width: 768px) {
   .c-card-text-container {
-    margin-top: 80px;
+    margin-bottom: 96px;
   }
 }
 
 .c-card-title-wrapper {
   display: grid;
-  grid-template-columns: 32px fit-content(100%) 1fr;
+  grid-template-columns: 32px 1fr;
   gap: 8px;
   align-items: center;
 }
 @media screen and (min-width: 768px) {
   .c-card-title-wrapper {
-    grid-template-columns: 50px fit-content(100%) 1fr;
+    grid-template-columns: 50px 1fr;
     gap: 12px;
   }
 }
@@ -453,8 +453,7 @@ component > card
 }
 
 .c-card-title {
-  max-width: 150px;
-  font-size: 24px;
+  font-size: 28px;
   font-family: var(--font-family--en);
   font-weight: 600;
   line-height: 1.2;
@@ -494,13 +493,13 @@ component > card
 }
 .c-card-text-list {
   display: grid;
-  gap: 4px;
+  gap: 8px;
   list-style: disc;
-  padding-left: 1em;
+  padding-left: 1.3em;
 }
 
 .c-card-text-list-item {
-  line-height: 1.4;
+  line-height: 1.6;
   letter-spacing: 0;
 }
 @media screen and (min-width: 768px) {

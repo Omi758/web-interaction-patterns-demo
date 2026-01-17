@@ -12,11 +12,11 @@ component > card
 // カード
 .c-card {
   counter-increment: number;
-  padding: 80px 24px 24px;
+  padding: 40px 24px 40px;
   border: 1px solid var(--color-border-light-gray);
   border-radius: 8px;
   @include g.mq() {
-    padding: 96px 40px 40px;
+    padding: 48px 56px 72px;
   }
 }
 
@@ -28,21 +28,23 @@ component > card
 
 // カードテキストコンテナ
 .c-card-text-container {
-  margin-top: 48px;
+  // margin-top: 48px;
+margin-bottom: 48px;
   @include g.mq() {
-    margin-top: 80px;
+    // margin-top: 80px;
+    margin-bottom: 96px;
   }
 }
 
 // カードタイトルラッパー（Grid配置）
 .c-card-title-wrapper {
   display: grid;
-  grid-template-columns: 32px fit-content(100%) 1fr;
+  grid-template-columns: 32px 1fr;
   gap: 8px;
   align-items: center;
 
   @include g.mq() {
-    grid-template-columns: 50px fit-content(100%) 1fr;
+    grid-template-columns: 50px 1fr;
     gap: 12px;
   }
 
@@ -72,8 +74,8 @@ component > card
 
 // カードタイトル
 .c-card-title {
-  max-width: 150px;
-  font-size: 24px;
+  // max-width: 150px;
+  font-size: 28px;
   font-family: var(--font-family--en);
   font-weight: 600;
   line-height: 1.2;
@@ -115,14 +117,14 @@ component > card
 // カードテキストリスト
 .c-card-text-list {
   display: grid;
-  gap: 4px;
+  gap: 8px;
   list-style: disc;
-  padding-left: 1em;
+  padding-left: 1.3em;
 }
 
 // カードテキストアイテム
 .c-card-text-list-item {
-  line-height: 1.4;
+  line-height: 1.6;
   letter-spacing: 0;
   @include g.mq() {
     font-size: 16px;
