@@ -4,4 +4,43 @@
 page > top > loading
 ------------------------------
 */
-.loading {}
+.loading {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-black);
+  z-index: var(--z-index-loading);
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  @include g.mq() {
+    gap: 24px;
+  }
+}
+
+.loading-text {
+  display: flex;
+  gap: 8px;
+  @include g.mq() {
+    gap: 16px;
+  }
+}
+
+.loading-text-item {
+  display: inline-block;
+  font-size: 40px;
+  color: var(--color-font-white);
+  font-family: var(--font-family--en);
+  text-transform: uppercase;
+  @include g.mq() {
+    font-size: 56px;
+  }
+}
+
+.loading-icon-img {
+  width: 40px;
+  aspect-ratio: 1 / 1;
+  @include g.mq() {
+    width: 56px;
+  }
+}

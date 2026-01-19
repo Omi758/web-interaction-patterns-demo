@@ -54,6 +54,7 @@ global > z-index
 ------------------------------
 */
 :root {
+  --z-index-loading: 1000;
   --z-index-modal: 100;
   --z-index-fixed-btn: 80;
   --z-index-header: 30;
@@ -1427,4 +1428,57 @@ page > top > sticky-header
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+/*!
+page > top > loading
+------------------------------
+*/
+.loading {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-bg-black);
+  z-index: var(--z-index-loading);
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .loading {
+    gap: 24px;
+  }
+}
+
+.loading-text {
+  display: flex;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .loading-text {
+    gap: 16px;
+  }
+}
+
+.loading-text-item {
+  display: inline-block;
+  font-size: 40px;
+  color: var(--color-font-white);
+  font-family: var(--font-family--en);
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .loading-text-item {
+    font-size: 56px;
+  }
+}
+
+.loading-icon-img {
+  width: 40px;
+  aspect-ratio: 1/1;
+}
+@media screen and (min-width: 768px) {
+  .loading-icon-img {
+    width: 56px;
+  }
 }/*# sourceMappingURL=style.css.map */
