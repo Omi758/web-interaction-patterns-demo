@@ -1439,18 +1439,12 @@ page > top > loading
   inset: 0;
   background-color: var(--color-bg-black);
   z-index: var(--z-index-loading);
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .loading {
-    gap: 24px;
-  }
+  display: grid;
+  place-items: center;
 }
 
 .loading-text {
+  grid-area: 1/1;
   display: flex;
   gap: 8px;
 }
@@ -1458,6 +1452,11 @@ page > top > loading
   .loading-text {
     gap: 16px;
   }
+}
+
+.loading-icon {
+  grid-area: 1/1;
+  z-index: 1;
 }
 
 .loading-text-item {

@@ -9,6 +9,7 @@ import { initializeAutoSlider } from "./component/auto-slider.js";
 import { initializeStickyHeader } from "./component/sticky-header.js";
 import { initializeStickyCta } from "./component/sticky-cta.js";
 import { initializeSmoothScroll } from "./component/smooth-scroll.js";
+import { initializeLoadingAnimation } from "./component/loading-animation.js";
 // 全ての初期化を実行
 initializeHamburgerMenu();
 initializeHeaderBackgroundToggle();
@@ -21,3 +22,4 @@ initializeAutoSlider();
 initializeStickyHeader();
 initializeStickyCta();
 initializeSmoothScroll();
+initializeLoadingAnimation();
