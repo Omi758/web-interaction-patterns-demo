@@ -54,7 +54,7 @@ opening.fromTo(".loading", {
   duration: 1,
   ease: "power2.inOut",
 },"-=0.4");
-
+// loading画面を削除
 opening.to(".loading", {
   display: "none",
 },"-=0.8");
@@ -68,7 +68,7 @@ opening.fromTo(".top-kv-copy-title span", {
   autoAlpha: 1,
   duration: 0.8,
   ease: "power2.inOut",
-  stagger: 0.3,
+  stagger: 0.2,
 },"-=0.5");
 
 //headerがフェードイン
