@@ -33,11 +33,25 @@ gsap.set(".loading",{
     ease: "bounce.out",
   });
 
-// iconが右へ移動
+/* iconが右へ移動
+ * gsap.matchMedia()でレスポンシブ対応 */
+const mm = gsap.matchMedia();
+
+// PC版(768px以上)
+mm.add("(min-width: 768px)", () => {
 opening.to(".js-loading-icon-img", {
   x: 112,
   duration: 1,
   ease: "power4.inOut",
+  });
+});
+// SP版(767px以下)
+mm.add("(max-width: 767px)", () => {
+opening.to(".js-loading-icon-img", {
+  x: 80,
+  duration: 1,
+  ease: "power4.inOut",
+  });
 });
 
 // テキストが上下交互に表示（stagger使用）
