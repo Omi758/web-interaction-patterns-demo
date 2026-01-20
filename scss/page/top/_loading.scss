@@ -4,6 +4,11 @@
 page > top > loading
 ------------------------------
 */
+body {
+  opacity: 0; //loading画面設置特有のリロード発火対策(JS側でbodyにopacity: 1を設定)
+}
+
+
 .loading {
   position: fixed;
   inset: 0;
@@ -47,13 +52,3 @@ page > top > loading
   }
 }
 
-// 仮設定_以下後ほど削除
-
-
-// .top-kv-copy-text {
-//   visibility: hidden;
-// }
-
-// .top-kv-text-ja {
-//   visibility: hidden;
-// }

@@ -1436,6 +1436,10 @@ page > top > sticky-header
 page > top > loading
 ------------------------------
 */
+body {
+  opacity: 0;
+}
+
 .loading {
   position: fixed;
   inset: 0;

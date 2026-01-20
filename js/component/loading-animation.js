@@ -1,4 +1,27 @@
+/**
+ * loading-animation
+ * ------------------------------
+ * ローディングアニメーション
+ * 仕様：
+ * - 読み込み時の発火対策初期設定としてcss側でbody {opacity: 0;}を設定で非表示
+ * - JS読み込み時にbodyにopacity: 1を設定
+ * - リロード対策：セッションストレージにaccess: 0を設定
+ */
+
 export const initializeLoadingAnimation = () => {
+  // JS読み込み時にbodyにopacity: 1を設定（読み込み時の一瞬発火防止策）
+  gsap.set("body",{
+    opacity: 1,
+  });
+  
+var webStorage = function() {
+if (sessionStorage.getItem("access")) {
+  // リロード対策
+gsap.set(".loading",{
+  display: "none",
+});
+} else {
+  sessionStorage.setItem("access", 0);
   // opening timelineを作成
   const opening = gsap.timeline();
   // 上からiconが降ってくる
@@ -97,4 +120,10 @@ opening.fromTo(".top-kv-text-ja", {
   duration: 0.8,
   ease: "power2.inOut",
 },"-=0.5");
+
+}
+};
+
+webStorage();
+
 }
