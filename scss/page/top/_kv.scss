@@ -42,20 +42,22 @@ page > top > top-kv
   }
 }
 
-.top-kv-copy-title span {
-  display: block;
+.top-kv-copy-title-item {
+  overflow: hidden; // loadingアニメーション用
+  display: inline-block;
+}
 
-  @include g.mq() {
-    display: inline;
-  }
+.top-kv-copy-title-item span {
+  display: inline-block;
+}
 
-  &:last-child {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 16px;
-  }
+.top-kv-copy-title-item:last-child span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 16px;
+}
 
-  &:last-child::after {
+.top-kv-copy-title-item:last-child span::after {
     content: "";
     display: block;
     background-image: url("../img/common/icon-js.svg");
@@ -69,7 +71,8 @@ page > top > top-kv
       height: 56px;
     }
   }
-}
+
+
 
 .top-kv-copy-text {
   font-family: var(--font-family--en);

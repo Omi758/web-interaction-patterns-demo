@@ -25,10 +25,10 @@ opening.fromTo(".loading-text-item", {
   y: 0,
   opacity: 1,
   duration: 0.6,
-  stagger: 0.6, // durationより大きくすると時間の重なりが消える
+  stagger: 0.6,
 });
 
-// テキストが逆順で上下交互に消える（1秒待ってから開始）
+// テキストが逆順で上下交互に消える（0.6秒待ってから開始）
 opening.to(".loading-text-item", {
   y: (i) => (i % 2 === 0 ? -32 : 32), // 偶数番目は上へ、奇数番目は下へ
   opacity: 0,
@@ -37,14 +37,64 @@ opening.to(".loading-text-item", {
     each: 0.1,    // 各要素間の遅延_0.1秒ずつずらす（durationより小さいので重なる）
     from: "start",  // 最後の要素(p)から逆順に消える
   },
-}, "+=0.6"); // 前のアニメーション終了から1秒後に開始
+}, "+=0.6"); // 前のアニメーション終了から0.6秒後に開始
 
 // js-iconを非表示
 opening.to(".js-loading-icon-img", {
   y: 32,
-  opacity: 0,
+  autoAlpha: 0,
   duration: 0.5,
 },"-=0.4");
 
 // ローディング背景フェードアウト
+opening.fromTo(".loading", {
+  autoAlpha: 1,
+}, {
+  autoAlpha: 0,
+  duration: 1,
+  ease: "power2.inOut",
+},"-=0.4");
+
+opening.to(".loading", {
+  display: "none",
+},"-=0.8");
+
+// kvタイトルが下から上に表示
+opening.fromTo(".top-kv-copy-title span", {
+  yPercent: 100,
+  autoAlpha: 0,
+},{
+  yPercent: 0,
+  autoAlpha: 1,
+  duration: 0.8,
+  ease: "power2.inOut",
+  stagger: 0.3,
+},"-=0.5");
+
+//headerがフェードイン
+opening.fromTo(".header", {
+  autoAlpha: 0,
+}, {
+  autoAlpha: 1,
+  duration: 0.8,
+  ease: "power2.inOut",
+},"-=0.5");
+
+// kv-copy-textがフェードイン
+opening.fromTo(".top-kv-copy-text", {
+  autoAlpha: 0,
+}, {
+  autoAlpha: 1,
+  duration: 0.8,
+  ease: "power2.inOut",
+},"-=0.5");
+
+// kv-text-jaがフェードイン
+opening.fromTo(".top-kv-text-ja", {
+  autoAlpha: 0,
+}, {
+  autoAlpha: 1,
+  duration: 0.8,
+  ease: "power2.inOut",
+},"-=0.5");
 }
