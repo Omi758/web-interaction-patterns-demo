@@ -6,6 +6,8 @@
  * - 読み込み時の発火対策初期設定としてcss側でbody {opacity: 0;}を設定で非表示
  * - JS読み込み時にbodyにopacity: 1を設定
  * - リロード対策：セッションストレージにaccess: 0を設定
+ * - アニメーションはgsap.timeline()で作成
+ * - 一部アニメーションにgsap.matchMedia()でレスポンシブ対応
  */
 
 export const initializeLoadingAnimation = () => {
