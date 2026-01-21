@@ -19,7 +19,7 @@ export const initializeLoadingAnimation = () => {
   var webStorage = function () {
     if (sessionStorage.getItem("access")) {
       // リロード対策
-      gsap.set(".loading", {
+      gsap.set(".js-loading", {
         display: "none",
       });
     } else {
@@ -62,7 +62,7 @@ export const initializeLoadingAnimation = () => {
 
       // テキストが上下交互に表示（stagger使用）
       opening.fromTo(
-        ".loading-text-item",
+        ".js-loading-text-item",
         {
           y: (i) => (i % 2 === 0 ? -32 : 32), // 偶数番目(0,2,4...)は上から、奇数番目(1,3,5...)は下から
           opacity: 0,
@@ -77,14 +77,14 @@ export const initializeLoadingAnimation = () => {
 
       // テキストが逆順で上下交互に消える（0.6秒待ってから開始）
       opening.to(
-        ".loading-text-item",
+        ".js-loading-text-item",
         {
           y: (i) => (i % 2 === 0 ? -32 : 32), // 偶数番目は上へ、奇数番目は下へ
           opacity: 0,
           duration: 0.5,
           stagger: {
             each: 0.1, // 各要素間の遅延_0.1秒ずつずらす（durationより小さいので重なる）
-            from: "start", // 最後の要素(p)から逆順に消える
+            from: "start", // 最初の要素(W)から順に消える
           },
         },
         "+=0.6"
@@ -103,7 +103,7 @@ export const initializeLoadingAnimation = () => {
 
       // ローディング背景フェードアウト
       opening.fromTo(
-        ".loading",
+        ".js-loading",
         {
           autoAlpha: 1,
         },
@@ -116,7 +116,7 @@ export const initializeLoadingAnimation = () => {
       );
       // loading画面を削除
       opening.to(
-        ".loading",
+        ".js-loading",
         {
           display: "none",
         },
@@ -125,7 +125,7 @@ export const initializeLoadingAnimation = () => {
 
       // kvタイトルが下から上に表示
       opening.fromTo(
-        ".top-kv-copy-title span",
+        ".js-top-kv-copy-title-item span",
         {
           yPercent: 100,
           autoAlpha: 0,
@@ -142,7 +142,7 @@ export const initializeLoadingAnimation = () => {
 
       //headerがフェードイン
       opening.fromTo(
-        ".header",
+        ".js-header",
         {
           autoAlpha: 0,
         },
@@ -154,9 +154,9 @@ export const initializeLoadingAnimation = () => {
         "-=0.5"
       );
 
-      // kv-copy-textがフェードイン
+      // js-top-kv-copy-textがフェードイン
       opening.fromTo(
-        ".top-kv-copy-text",
+        ".js-top-kv-copy-text",
         {
           autoAlpha: 0,
         },
@@ -168,9 +168,9 @@ export const initializeLoadingAnimation = () => {
         "-=0.5"
       );
 
-      // kv-text-jaがフェードイン
+      // js-top-kv-text-jaがフェードイン
       opening.fromTo(
-        ".top-kv-text-ja",
+        ".js-top-kv-text-ja",
         {
           autoAlpha: 0,
         },
