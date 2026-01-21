@@ -133,7 +133,7 @@ export const initializeLoadingAnimation = () => {
         {
           yPercent: 0,
           autoAlpha: 1,
-          duration: 0.8,
+          duration: 0.7,
           ease: "power2.inOut",
           stagger: 0.2,
         },
