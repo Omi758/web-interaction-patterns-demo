@@ -72,42 +72,38 @@
 
 ```text
 .
-├── about.html
-├── contact.html
 ├── index.html
-├── news.html
-├── recruit.html
-├── service.html
 ├── css
 │   ├── style.css
-│   ├── style.css.map
 │   └── vendor
 │       └── splide-core.min.css
 ├── img
 ├── js
 │   ├── component
+│   │   ├── accordion.js
+│   │   ├── auto-slider.js
+│   │   ├── dropdown.js
 │   │   ├── hamburger-menu.js
 │   │   ├── header-background-toggle.js
-│   │   └── scroll-animations.js
+│   │   ├── loading-animation.js
+│   │   ├── modal.js
+│   │   ├── smooth-scroll.js
+│   │   ├── sticky-cta.js
+│   │   ├── sticky-header.js
+│   │   ├── switch-viewport.js
+│   │   └── tab-menu.js
 │   ├── main.js
-│   ├── slider
-│   │   ├── gallery-slider.js
-│   │   └── staff-slider.js
 │   └── vendor
 │       ├── gsap.min.js
+│       ├── ScrollToPlugin.min.js
 │       ├── ScrollTrigger.min.js
 │       ├── splide-extension-auto-scroll.min.js
 │       └── splide.min.js
 └── scss
     ├── component
-    │   ├── _breadcrumb.scss
     │   ├── _button.scss
-    │   ├── _entry-button.scss
-    │   ├── _form.scss
+    │   ├── _card.scss
     │   ├── _index.scss
-    │   ├── _news-item.scss
-    │   ├── _page-kv.scss
-    │   ├── _pagination.scss
     │   └── _title.scss
     ├── foundation
     │   ├── _base.scss
@@ -116,6 +112,7 @@
     ├── global
     │   ├── _breakpoints.scss
     │   ├── _color.scss
+    │   ├── _content-width.scss
     │   ├── _font.scss
     │   ├── _index.scss
     │   └── _z-index.scss
@@ -123,35 +120,25 @@
     │   ├── _container.scss
     │   ├── _footer.scss
     │   ├── _header.scss
+    │   ├── _hover.scss
     │   └── _index.scss
     ├── page
     │   ├── _index.scss
-    │   ├── about
-    │   │   ├── _about-company.scss
-    │   │   ├── _about-philosophy.scss
-    │   │   └── _about-staff.scss
-    │   ├── contact
-    │   │   └── _contact-form.scss
-    │   ├── news
-    │   │   └── _news-archive.scss
-    │   ├── recruit
-    │   │   ├── _recruit-benefit.scss
-    │   │   ├── _recruit-culture.scss
-    │   │   └── _recruit-position.scss
-    │   ├── service
-    │   │   ├── _service-case.scss
-    │   │   └── _service-detail.scss
     │   └── top
-    │       ├── _top-about.scss
-    │       ├── _top-kv.scss
-    │       ├── _top-news.scss
-    │       ├── _top-recruit.scss
-    │       └── _top-service.scss
+    │       ├── _accordion.scss
+    │       ├── _auto-slider.scss
+    │       ├── _dropdown.scss
+    │       ├── _github-link.scss
+    │       ├── _kv.scss
+    │       ├── _loading.scss
+    │       ├── _modal.scss
+    │       ├── _sticky-header.scss
+    │       ├── _tab.scss
+    │       └── _top-common.scss
     ├── style.scss
     └── utility
         ├── _index.scss
         └── _utility.scss
-
 ```
 
 ## 💻 Development Environment（開発環境）
