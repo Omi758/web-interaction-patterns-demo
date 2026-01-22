@@ -75,7 +75,7 @@ export const initializeLoadingAnimation = () => {
         }
       );
 
-      // テキストが逆順で上下交互に消える（0.6秒待ってから開始）
+      // テキストが降りてきた順番で上下交互に消える（0.6秒待ってから開始）
       opening.to(
         ".js-loading-text-item",
         {
