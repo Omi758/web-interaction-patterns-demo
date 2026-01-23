@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- noindex設定_実案件では削除のこと！！ -->
-    <meta name="robots" content="noindex" />
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- js -->
     <script src="js/vendor/gsap.min.js" defer></script>
@@ -56,19 +56,27 @@
     <script type="module" src="js/main.js"></script>
   </head>
   <body>
-<!-- ローディング -->
- <div class="loading js-loading">
-  <div class="loading-text">
-    <span class="loading-text-item js-loading-text-item">w</span>
-    <span class="loading-text-item js-loading-text-item">i</span>
-    <span class="loading-text-item js-loading-text-item">p</span>
-  </div>
+    <!-- ローディング -->
+    <div class="loading js-loading">
+      <div class="loading-text">
+        <span class="loading-text-item js-loading-text-item">w</span>
+        <span class="loading-text-item js-loading-text-item">i</span>
+        <span class="loading-text-item js-loading-text-item">p</span>
+      </div>
 
-  <div class="loading-icon">
-    <img src='img/common/icon-js.svg' class="loading-icon-img js-loading-icon-img" width='100' height='100' alt='JavaScript' decoding='async' loading='lazy' />
-  </div>
- </div>
-<!-- ローディング end -->
+      <div class="loading-icon">
+        <img
+          src="img/common/icon-js.svg"
+          class="loading-icon-img js-loading-icon-img"
+          width="100"
+          height="100"
+          alt="JavaScript"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <!-- ローディング end -->
 
     <!-- スクロール連動CTAボタン -->
     <a
@@ -207,9 +215,15 @@
         <div class="top-kv-inner l-container-l">
           <div class="top-kv-copy-container">
             <h1 class="top-kv-copy-title" lang="en">
-              <span class="top-kv-copy-title-item js-top-kv-copy-title-item"><span>Web</span></span>
-              <span class="top-kv-copy-title-item js-top-kv-copy-title-item"><span>Interaction</span></span>
-              <span class="top-kv-copy-title-item js-top-kv-copy-title-item"><span>Patterns</span></span>
+              <span class="top-kv-copy-title-item js-top-kv-copy-title-item"
+                ><span>Web</span></span
+              >
+              <span class="top-kv-copy-title-item js-top-kv-copy-title-item"
+                ><span>Interaction</span></span
+              >
+              <span class="top-kv-copy-title-item js-top-kv-copy-title-item"
+                ><span>Patterns</span></span
+              >
             </h1>
             <p class="top-kv-copy-text js-top-kv-copy-text" lang="en">
               <span
@@ -250,7 +264,6 @@
                   モーダル表示時に起こるスクロールバー切り替えによるレイアウトシフト(ガタつき)をscrollbar-gutter:
                   stable; で対策しています。
                 </li>
-
               </ul>
             </div>
           </div>
@@ -287,7 +300,6 @@
               </div>
             </dialog>
           </div>
-
         </section>
         <!-- modal end -->
         <!-- dropdown -->
@@ -363,7 +375,6 @@
               </nav>
             </div>
           </div>
-
         </section>
         <!-- dropdown end -->
         <!-- tab -->
@@ -415,7 +426,6 @@
               </div>
             </div>
           </div>
-
         </section>
         <!-- tab end -->
         <!-- accordion -->
@@ -481,7 +491,6 @@
               </details>
             </div>
           </div>
-
         </section>
         <!-- accordion end -->
         <!-- hamburger menu -->
@@ -512,11 +521,24 @@
             </div>
           </div>
           <div class="c-card-demo">
-            <video class="c-card-demo-video" src="img/top/hamburger-menu.mp4" controls playsinline preload="metadata" width="1108" height="720">
-              <track kind="captions" src="img/top/hamburger-menu.vtt" srclang="ja" label="日本語" default>
+            <video
+              class="c-card-demo-video"
+              src="img/top/hamburger-menu.mp4"
+              controls
+              playsinline
+              preload="metadata"
+              width="1108"
+              height="720"
+            >
+              <track
+                kind="captions"
+                src="img/top/hamburger-menu.vtt"
+                srclang="ja"
+                label="日本語"
+                default
+              />
             </video>
           </div>
-
         </section>
         <!-- hamburger menu end -->
         <!-- sticky header -->
@@ -542,11 +564,25 @@
 
           <div class="c-card-demo">
             <div class="c-card-demo">
-              <video class="c-card-demo-video" src="img/top/sticky-header.mp4" controls playsinline preload="metadata" width="1108" height="720">
-                <track kind="captions" src="img/top/sticky-header.vtt" srclang="ja" label="日本語" default>
+              <video
+                class="c-card-demo-video"
+                src="img/top/sticky-header.mp4"
+                controls
+                playsinline
+                preload="metadata"
+                width="1108"
+                height="720"
+              >
+                <track
+                  kind="captions"
+                  src="img/top/sticky-header.vtt"
+                  srclang="ja"
+                  label="日本語"
+                  default
+                />
               </video>
             </div>
-            </div>
+          </div>
         </section>
         <!-- sticky header end -->
         <!-- sticky cta button -->
@@ -577,12 +613,25 @@
 
           <div class="c-card-demo">
             <div class="c-card-demo">
-              <video class="c-card-demo-video" src="img/top/sticky-cta.mp4" controls playsinline preload="metadata" width="1108" height="720">
-                <track kind="captions" src="img/top/sticky-cta.vtt" srclang="ja" label="日本語" default>
+              <video
+                class="c-card-demo-video"
+                src="img/top/sticky-cta.mp4"
+                controls
+                playsinline
+                preload="metadata"
+                width="1108"
+                height="720"
+              >
+                <track
+                  kind="captions"
+                  src="img/top/sticky-cta.vtt"
+                  srclang="ja"
+                  label="日本語"
+                  default
+                />
               </video>
             </div>
-            </div>
-
+          </div>
         </section>
         <!-- sticky cta button end -->
       </div>
