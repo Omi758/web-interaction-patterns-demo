@@ -26,7 +26,7 @@
 - Hamburger Menu
 - Sticky Header
 - Sticky CTA
-- Infinity Slider
+- Infinite Slider
 
 各セクションに関する詳細な仕様は**実際のデモサイトをご覧ください。**
 
@@ -62,7 +62,7 @@
 
 ### 4. JSライブラリ**SplideのAutoScrollを使用**したスライダーの設置
 
-- Infinity Sliderを実装しました。クリックするとスライドが反転します。実際の現場ではあまり見られない実装かもしれませんが、実験・検証を目的としたサイトとして挑戦しています。
+- Infinite Sliderを実装しました。クリックするとスライドが反転します。実際の現場ではあまり見られない実装かもしれませんが、実験・検証を目的としたサイトとして挑戦しています。
 
   &nbsp;
 
