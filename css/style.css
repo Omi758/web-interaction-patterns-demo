@@ -277,8 +277,7 @@ utility > utility
   border: 0 !important;
   padding: 0 !important;
   clip: rect(0 0 0 0) !important;
-  -webkit-clip-path: inset(50%) !important;
-          clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
   margin: -1px !important;
 }
 
@@ -1318,8 +1317,6 @@ page > top > auto-slider
   color: var(--color-font-white);
   background-color: var(--color-bg-extra-black);
   overflow: hidden;
-  /* 表面(画像) */
-  /* 裏面(テキスト)は最初から裏向きで待機 */
 }
 @media screen and (min-width: 768px) {
   .auto-slider {
@@ -1351,8 +1348,14 @@ page > top > auto-slider
   transform: translateZ(0);
   will-change: transform;
 }
+.auto-slider {
+  /* 表面(画像) */
+}
 .auto-slider .slider-card-front {
   z-index: 2;
+}
+.auto-slider {
+  /* 裏面(テキスト)は最初から裏向きで待機 */
 }
 .auto-slider .slider-card-back {
   z-index: 1;
