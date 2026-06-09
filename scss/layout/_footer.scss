@@ -18,7 +18,7 @@ layout > footer
   font-size: 12px;
   span {
     display: block;
-    @include g.mq(sm) {
+    @include g.mq() {
       display: inline;
     }
   }

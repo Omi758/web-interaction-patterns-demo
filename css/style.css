@@ -694,7 +694,7 @@ layout > footer
 .footer-privacy-notice span {
   display: block;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 768px) {
   .footer-privacy-notice span {
     display: inline;
   }
